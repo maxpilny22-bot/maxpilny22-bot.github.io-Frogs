@@ -16,15 +16,27 @@
         style="font-size: 4.5rem; left: 40%; top: 0;
         text-align: center; text-shadow: 1px 1px 5px black; color: white;"
         >Score: 6</p>
-        <img src="Images/StartButton.jpg" alt="FrogSelection"
+        <img id="FrogSelection" src="Images/StartButton.jpg" alt="FrogSelection" title="Start"
         height="300" width="300" 
         style="position: absolute; left: 35%; bottom: 30px;
-        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);">
+        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);"
+        onclick="
+        startedgame = true
+        newitemFunction()
+        ">
 
         <img src="Images/BasicFrog.jpg" alt="Slot" id="FrogSlot1" title="BasicFrog" 
         height="200" width="200"
         style="position: absolute; left: 20%; top: 250px;
-        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);">
+        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);"
+        onclick="
+        if (startedgame) {
+            useitemFunction(1)
+            ageFunction()
+            newitemFunction()
+        } else {
+            console.log('NOT STARTED YET')
+        }">
         <p id="FrogSlot1Name"
         style="font-size: 2.5rem; margin-left: 20%; margin-top: -30px;
         text-shadow: 1px 1px 5px black; color: yellowgreen;"
@@ -37,7 +49,15 @@
         <img src="Images/BasicFrog.jpg" alt="Slot" id="FrogSlot2" title="BasicFrog" 
         height="200" width="200"
         style="position: absolute; left: 60%; top: 250px;
-        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);">
+        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);"
+        onclick="
+        if (startedgame) {
+            useitemFunction(2)
+            ageFunction()
+            newitemFunction()
+        } else {
+            console.log('NOT STARTED YET')
+        }">
         <p id="FrogSlot2Name"
         style="font-size: 2.5rem; margin-left: 60%; margin-top: -350px;
         text-shadow: 1px 1px 5px black; color: yellowgreen;"
@@ -50,7 +70,15 @@
         <img src="Images/BasicFrog.jpg" alt="Slot" id="FrogSlot3" title="BasicFrog" 
         height="200" width="200"
         style="position: absolute; left: 20%; top: 610px;
-        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);">
+        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);"
+        onclick="
+        if (startedgame) {
+            useitemFunction(3)
+            ageFunction()
+            newitemFunction()
+        } else {
+            console.log('NOT STARTED YET')
+        }">
         <p id="FrogSlot3Name"
         style="font-size: 2.5rem; margin-left: 20%; margin-top: 40px;
         text-shadow: 1px 1px 5px black; color: yellowgreen;"
@@ -63,7 +91,15 @@
         <img src="Images/BasicFrog.jpg" alt="Slot" id="FrogSlot4" title="BasicFrog" 
         height="200" width="200"
         style="position: absolute; left: 60%; top: 610px;
-        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);">
+        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);"
+        onclick="
+        if (startedgame) {
+            useitemFunction(4)
+            ageFunction()
+            newitemFunction()
+        } else {
+            console.log('NOT STARTED YET')
+        }">
         <p id="FrogSlot4Name"
         style="font-size: 2.5rem; margin-left: 60%; margin-top: -350px;
         text-shadow: 1px 1px 5px black; color: yellowgreen;"
@@ -76,7 +112,15 @@
         <img src="Images/BasicFrog.jpg" alt="Slot" id="FrogSlot5" title="BasicFrog" 
         height="200" width="200"
         style="position: absolute; left: 20%; top: 970px;
-        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);">
+        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);"
+        onclick="
+        if (startedgame) {
+            useitemFunction(5)
+            ageFunction()
+            newitemFunction()
+        } else {
+            console.log('NOT STARTED YET')
+        }">
         <p id="FrogSlot5Name"
         style="font-size: 2.5rem; margin-left: 20%; margin-top: 0px;
         text-shadow: 1px 1px 5px black; color: yellowgreen;"
@@ -89,7 +133,15 @@
         <img src="Images/BasicFrog.jpg" alt="Slot" id="FrogSlot6" title="BasicFrog" 
         height="200" width="200"
         style="position: absolute; left: 60%; top: 970px;
-        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);">
+        outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);"
+        onclick="
+        if (startedgame) {
+            useitemFunction(6)
+            ageFunction()
+            newitemFunction()
+        } else {
+            console.log('NOT STARTED YET')
+        }">
         <p id="FrogSlot6Name"
         style="font-size: 2.5rem; margin-left: 60%; margin-top: -350px;
         text-shadow: 1px 1px 5px black; color: yellowgreen;"
@@ -130,49 +182,311 @@
         >Press to Start</p>
         
         <script>
-            let nameArray = ["James", "John", "Hank", "Samuel", "Frank", "Max", "Froggy", "Robert", "Hubert", "George", "Jam", "Sam", "Ham", "Ribbert", "Sally", "Pancake", "Burger", "Jerry", "Hairy", "Jeffery", "Thragg"]
-            let ranName = Math.floor(Math.random() * 21)
+            let startedgame = false
+
+            let nameArray = ["James", "John", "Hank", "Samuel", "Frank", "Max", "Froggy", "Robert", "Hubert", "George", "Jam", "Sam", "Ham", "Ribbert", "Sally", "Pancake", "Burger", "Jerry", "Hairy", "Jeffery", "Thragg", "Princess", "Ariel", "Kevin", "Belly", "Pickles", "Jameson", "Jessica", "Paul", "Walter"]
+            let ranName = Math.floor(Math.random() * 30)
             document.getElementById('FrogSlot1Name').innerHTML= nameArray[ranName]
-            ranName = Math.floor(Math.random() * 21)
+            ranName = Math.floor(Math.random() * 30)
             document.getElementById('FrogSlot2Name').innerHTML= nameArray[ranName]
-            ranName = Math.floor(Math.random() * 21)
+            ranName = Math.floor(Math.random() * 30)
             document.getElementById('FrogSlot3Name').innerHTML= nameArray[ranName]
-            ranName = Math.floor(Math.random() * 21)
+            ranName = Math.floor(Math.random() * 30)
             document.getElementById('FrogSlot4Name').innerHTML= nameArray[ranName]
-            ranName = Math.floor(Math.random() * 21)
+            ranName = Math.floor(Math.random() * 30)
             document.getElementById('FrogSlot5Name').innerHTML= nameArray[ranName]
-            ranName = Math.floor(Math.random() * 21)
+            ranName = Math.floor(Math.random() * 30)
             document.getElementById('FrogSlot6Name').innerHTML= nameArray[ranName]
 
             let frog1Score = 1
-            let frog1Age = 0
-            let frog1Hunger = 0
-            let frog1Sickness = 0
+            let frog1Age = 25 + Math.floor(Math.random()*20)
+            let frog1Hunger = 10 + Math.floor(Math.random()*10)
+            let frog1Appitite = 1
+            let frog1Immune = 1
+            let frog1Sick = false
             let frog2Score = 1
-            let frog2Age = 0
-            let frog2Hunger = 0
-            let frog2Sickness = 0
+            let frog2Age = 25 + Math.floor(Math.random()*20)
+            let frog2Hunger = 10 + Math.floor(Math.random()*10)
+            let frog2Appitite = 1
+            let frog2Immune = 1
+            let frog2Sick = false
             let frog3Score = 1
-            let frog3Age = 0
-            let frog3Hunger = 0
-            let frog3Sickness = 0
+            let frog3Age = 25 + Math.floor(Math.random()*20)
+            let frog3Hunger = 10 + Math.floor(Math.random()*10)
+            let frog3Appitite = 1
+            let frog3Immune = 1
+            let frog3Sick = false
             let frog4Score = 1
-            let frog4Age = 0
-            let frog4Hunger = 0
-            let frog4Sickness = 0
+            let frog4Age = 25 + Math.floor(Math.random()*20)
+            let frog4Hunger = 10 + Math.floor(Math.random()*10)
+            let frog4Appitite = 1
+            let frog4Immune = 1
+            let frog4Sick = false
             let frog5Score = 1
-            let frog5Age = 0
-            let frog5Hunger = 0
-            let frog5Sickness = 0
+            let frog5Age = 25 + Math.floor(Math.random()*20)
+            let frog5Hunger = 10 + Math.floor(Math.random()*10)
+            let frog5Appitite = 1
+            let frog5Immune = 1
+            let frog5Sick = false
             let frog6Score = 1
-            let frog6Age = 0
-            let frog6Hunger = 0
-            let frog6Sickness = 0
+            let frog6Age = 25 + Math.floor(Math.random()*20)
+            let frog6Hunger = 10 + Math.floor(Math.random()*10)
+            let frog6Appitite = 1
+            let frog6Immune = 1
+            let frog6Sick = false
             function updatefrogscore() {
                 let totalScore = frog1Score + frog2Score + frog3Score + frog4Score + frog5Score + frog6Score    
                 document.getElementById('score').innerHTML = "Score: " + totalScore
             }
             updatefrogscore()
+
+            function ageFunction() {
+            frog1Age -= 1
+            frog1Hunger -= frog1Appitite
+            if (frog1Sick) {
+                frog1Hunger -= 1
+            }
+            document.getElementById('FrogSlot1Condition').innerHTML = ' '
+            if (frog1Age <= 12) {
+                document.getElementById('FrogSlot1Condition').innerHTML = 'Old Age'
+            }
+            if (frog1Hunger <= 12) {
+                document.getElementById('FrogSlot1Condition').innerHTML =
+                document.getElementById('FrogSlot1Condition').innerHTML + '<br> Hungry'
+            }
+            if (frog1Sick) {
+                document.getElementById('FrogSlot1Condition').innerHTML =
+                document.getElementById('FrogSlot1Condition').innerHTML + '<br> Sick'
+            } else {
+                let sickrandom = Math.floor(Math.random() * 30)
+                if (sickrandom <= frog1Immune) {
+                    frog1Sick = true
+                    document.getElementById('FrogSlot1Condition').innerHTML =
+                    document.getElementById('FrogSlot1Condition').innerHTML + '<br> Sick'
+                }
+            }
+            if (frog1Age <= 0 || frog1Hunger <= 0) {
+                document.getElementById('FrogSlot1').style.pointerEvents = "none"
+                document.getElementById('FrogSlot1').src = "Images/Dead.jpg"
+                document.getElementById('FrogSlot1Name').style.color = "red"
+            }
+            frog2Age -= 1
+            frog2Hunger -= frog2Appitite
+            if (frog2Sick) {
+                frog2Hunger -= 1
+            }
+            document.getElementById('FrogSlot2Condition').innerHTML = ' '
+            if (frog2Age <= 12) {
+                document.getElementById('FrogSlot2Condition').innerHTML = 'Old Age'
+            }
+            if (frog2Hunger <= 12) {
+                document.getElementById('FrogSlot2Condition').innerHTML =
+                document.getElementById('FrogSlot2Condition').innerHTML + '<br> Hungry'
+            }
+            if (frog2Sick) {
+                document.getElementById('FrogSlot2Condition').innerHTML =
+                document.getElementById('FrogSlot2Condition').innerHTML + '<br> Sick'
+            } else {
+                let sickrandom = Math.floor(Math.random() * 30)
+                if (sickrandom <= frog2Immune) {
+                    frog2Sick = true
+                    document.getElementById('FrogSlot2Condition').innerHTML =
+                    document.getElementById('FrogSlot2Condition').innerHTML + '<br> Sick'
+                }
+            }
+            if (frog2Age <= 0 || frog2Hunger <= 0) {
+                document.getElementById('FrogSlot2').style.pointerEvents = "none"
+                document.getElementById('FrogSlot2').src = "Images/Dead.jpg"
+                document.getElementById('FrogSlot2Name').style.color = "red"
+            }
+            frog3Age -= 1
+            frog3Hunger -= frog3Appitite
+            if (frog3Sick) {
+                frog3Hunger -= 1
+            }
+            document.getElementById('FrogSlot3Condition').innerHTML = ' '
+            if (frog3Age <= 12) {
+                document.getElementById('FrogSlot3Condition').innerHTML = 'Old Age'
+            }
+            if (frog3Hunger <= 12) {
+                document.getElementById('FrogSlot3Condition').innerHTML =
+                document.getElementById('FrogSlot3Condition').innerHTML + '<br> Hungry'
+            }
+            if (frog3Sick) {
+                document.getElementById('FrogSlot3Condition').innerHTML =
+                document.getElementById('FrogSlot3Condition').innerHTML + '<br> Sick'
+            } else {
+                let sickrandom = Math.floor(Math.random() * 30)
+                if (sickrandom <= frog3Immune) {
+                    frog3Sick = true
+                    document.getElementById('FrogSlot3Condition').innerHTML =
+                    document.getElementById('FrogSlot3Condition').innerHTML + '<br> Sick'
+                }
+            }
+            if (frog3Age <= 0 || frog3Hunger <= 0) {
+                document.getElementById('FrogSlot3').style.pointerEvents = "none"
+                document.getElementById('FrogSlot3').src = "Images/Dead.jpg"
+                document.getElementById('FrogSlot3Name').style.color = "red"
+            }
+            frog4Age -= 1
+            frog4Hunger -= frog4Appitite
+            if (frog4Sick) {
+                frog4Hunger -= 1
+            }
+            document.getElementById('FrogSlot4Condition').innerHTML = ' '
+            if (frog4Age <= 12) {
+                document.getElementById('FrogSlot4Condition').innerHTML = 'Old Age'
+            }
+            if (frog4Hunger <= 12) {
+                document.getElementById('FrogSlot4Condition').innerHTML =
+                document.getElementById('FrogSlot4Condition').innerHTML + '<br> Hungry'
+            }
+            if (frog4Sick) {
+                document.getElementById('FrogSlot4Condition').innerHTML =
+                document.getElementById('FrogSlot4Condition').innerHTML + '<br> Sick'
+            } else {
+                let sickrandom = Math.floor(Math.random() * 30)
+                if (sickrandom <= frog4Immune) {
+                    frog4Sick = true
+                    document.getElementById('FrogSlot4Condition').innerHTML =
+                    document.getElementById('FrogSlot4Condition').innerHTML + '<br> Sick'
+                }
+            }
+            if (frog4Age <= 0 || frog4Hunger <= 0) {
+                document.getElementById('FrogSlot4').style.pointerEvents = "none"
+                document.getElementById('FrogSlot4').src = "Images/Dead.jpg"
+                document.getElementById('FrogSlot4Name').style.color = "red"
+            }
+            frog5Age -= 1
+            frog5Hunger -= frog5Appitite
+            if (frog5Sick) {
+                frog5Hunger -= 1
+            }
+            document.getElementById('FrogSlot5Condition').innerHTML = ' '
+            if (frog5Age <= 12) {
+                document.getElementById('FrogSlot5Condition').innerHTML = 'Old Age'
+            }
+            if (frog5Hunger <= 12) {
+                document.getElementById('FrogSlot5Condition').innerHTML =
+                document.getElementById('FrogSlot5Condition').innerHTML + '<br> Hungry'
+            }
+            if (frog5Sick) {
+                document.getElementById('FrogSlot5Condition').innerHTML =
+                document.getElementById('FrogSlot5Condition').innerHTML + '<br> Sick'
+            } else {
+                let sickrandom = Math.floor(Math.random() * 30)
+                if (sickrandom <= frog5Immune) {
+                    frog5Sick = true
+                    document.getElementById('FrogSlot5Condition').innerHTML =
+                    document.getElementById('FrogSlot5Condition').innerHTML + '<br> Sick'
+                }
+            }
+            if (frog5Age <= 0 || frog5Hunger <= 0) {
+                document.getElementById('FrogSlot5').style.pointerEvents = "none"
+                document.getElementById('FrogSlot5').src = "Images/Dead.jpg"
+                document.getElementById('FrogSlot5Name').style.color = "red"
+            }
+            frog6Age -= 1
+            frog6Hunger -= frog6Appitite
+            if (frog6Sick) {
+                frog6Hunger -= 1
+            }
+            document.getElementById('FrogSlot6Condition').innerHTML = ' '
+            if (frog6Age <= 12) {
+                document.getElementById('FrogSlot6Condition').innerHTML = 'Old Age'
+            }
+            if (frog6Hunger <= 12) {
+                document.getElementById('FrogSlot6Condition').innerHTML =
+                document.getElementById('FrogSlot6Condition').innerHTML + '<br> Hungry'
+            }
+            if (frog6Sick) {
+                document.getElementById('FrogSlot6Condition').innerHTML =
+                document.getElementById('FrogSlot6Condition').innerHTML + '<br> Sick'
+            } else {
+                let sickrandom = Math.floor(Math.random() * 30)
+                console.log(sickrandom)
+                if (sickrandom <= frog6Immune) {
+                    frog6Sick = true
+                    document.getElementById('FrogSlot6Condition').innerHTML =
+                    document.getElementById('FrogSlot6Condition').innerHTML + '<br> Sick'
+                }
+            }
+            if (frog6Age <= 0 || frog6Hunger <= 0) {
+                document.getElementById('FrogSlot6').style.pointerEvents = "none"
+                document.getElementById('FrogSlot6').src = "Images/Dead.jpg"
+                document.getElementById('FrogSlot6Name').style.color = "red"
+            }
+            }
+            function newitemFunction() {
+                let randomItemNum = Math.floor(Math.random() * 3)
+                if (randomItemNum == 1) {
+                    document.getElementById('FrogSelection').src = "Images/Cricket.jpg"
+                    document.getElementById('FrogSelection').title = "Cricket"
+                    document.getElementById('FrogSelectionText').innerHTML =
+                    "Yummy, click on a frog for + 6 food"
+                } else if (randomItemNum == 2) {
+                    document.getElementById('FrogSelection').src = "Images/Worm.jpg"
+                    document.getElementById('FrogSelection').title = "Worm"
+                    document.getElementById('FrogSelectionText').innerHTML =
+                    "Yummy, click on a frog for + 8 food"
+                } else if (randomItemNum == 3) {
+                    document.getElementById('FrogSelection').src = "Images/Mosquito.jpg"
+                    document.getElementById('FrogSelection').title = "Mosquito"
+                    document.getElementById('FrogSelectionText').innerHTML =
+                    "Yummy, click on a frog for + 8 food, but can cause sickness"
+                }
+            }
+            function useitemFunction(frognum) {
+                if (frognum == 1) {
+                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                        frog1Hunger += 6
+                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                        frog1Hunger += 8
+                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                        frog1Hunger += 8
+                    }
+                } else if (frognum == 2) {
+                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                        frog2Hunger += 6
+                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                        frog2Hunger += 8
+                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                        frog2Hunger += 8
+                    }
+                } else if (frognum == 3) {
+                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                        frog3Hunger += 6
+                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                        frog3Hunger += 8
+                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                        frog3Hunger += 8
+                    } 
+                } else if (frognum == 4) {
+                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                        frog4Hunger += 4
+                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                        frog4Hunger += 8
+                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                        frog4Hunger += 8
+                    }
+                } else if (frognum == 5) {
+                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                        frog5Hunger += 6
+                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                        frog5Hunger += 8
+                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                        frog5Hunger += 8
+                    }
+                } else if (frognum == 6) {
+                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                        frog6Hunger += 6
+                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                        frog6Hunger += 8
+                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                        frog6Hunger += 8
+                    }
+                }
+            }
             
         </script>
     </body>
