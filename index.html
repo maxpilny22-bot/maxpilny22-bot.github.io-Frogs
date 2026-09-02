@@ -152,32 +152,80 @@
         >+1 Score</p>
         
         <p id="FrogSlot1Condition"
-        style="font-size: xx-large; margin-left: 0; margin-top: -950px;
-        text-shadow: 1px 1px 3px black; color: red;"
+        style="font-size: xx-large; margin-left: 0; margin-top: -1000px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Sick<br>(2x hunger)</p>
+        <p id="FrogSlot1Condition2"
+        style="font-size: xx-large; margin-left: 0; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
         >Hungry</p>
+        <p id="FrogSlot1Condition3"
+        style="font-size: xx-large; margin-left: 0; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Old</p>
         <p id="FrogSlot2Condition"
-        style="font-size: xx-large; margin-left: 85%; margin-top: -50px;
-        text-shadow: 1px 1px 3px black; color: red;"
+        style="font-size: xx-large; margin-left: 85%; margin-top: -200px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Sick<br>(2x hunger)</p>
+        <p id="FrogSlot2Condition2"
+        style="font-size: xx-large; margin-left: 85%; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
         >Hungry</p>
+        <p id="FrogSlot2Condition3"
+        style="font-size: xx-large; margin-left: 85%; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Old</p>
         <p id="FrogSlot3Condition"
-        style="font-size: xx-large; margin-left: 0; margin-top: 250px;
-        text-shadow: 1px 1px 3px black; color: red;"
+        style="font-size: xx-large; margin-left: 0; margin-top: 200px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Sick<br>(2x hunger)</p>
+        <p id="FrogSlot3Condition2"
+        style="font-size: xx-large; margin-left: 0; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
         >Hungry</p>
+        <p id="FrogSlot3Condition3"
+        style="font-size: xx-large; margin-left: 0; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Old</p>
         <p id="FrogSlot4Condition"
-        style="font-size: xx-large; margin-left: 85%; margin-top: -50px;
-        text-shadow: 1px 1px 3px black; color: red;"
+        style="font-size: xx-large; margin-left: 85%; margin-top: -200px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Sick<br>(2x hunger)</p>
+        <p id="FrogSlot4Condition2"
+        style="font-size: xx-large; margin-left: 85%; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
         >Hungry</p>
+        <p id="FrogSlot4Condition3"
+        style="font-size: xx-large; margin-left: 85%; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Old</p>
         <p id="FrogSlot5Condition"
-        style="font-size: xx-large; margin-left: 0; margin-top: 260px;
-        text-shadow: 1px 1px 3px black; color: red;"
+        style="font-size: xx-large; margin-left: 0; margin-top: 200px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Sick<br>(2x hunger)</p>
+        <p id="FrogSlot5Condition2"
+        style="font-size: xx-large; margin-left: 0; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
         >Hungry</p>
+        <p id="FrogSlot5Condition3"
+        style="font-size: xx-large; margin-left: 0; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Old</p>
         <p id="FrogSlot6Condition"
-        style="font-size: xx-large; margin-left: 85%; margin-top: -50px;
-        text-shadow: 1px 1px 3px black; color: red;"
+        style="font-size: xx-large; margin-left: 85%; margin-top: -200px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Sick<br>(2x hunger)</p>
+        <p id="FrogSlot6Condition2"
+        style="font-size: xx-large; margin-left: 85%; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
         >Hungry</p>
+        <p id="FrogSlot6Condition3"
+        style="font-size: xx-large; margin-left: 85%; margin-top: -20px;
+        text-shadow: 1px 1px 3px transparent; color: transparent;"
+        >Old</p>
 
         <p id="FrogSelectionText"
-        style="font-size: 3.5rem; margin-left: 35%; margin-top: 310px;
+        style="font-size: 3.5rem; margin-left: 35%; margin-bottom: 150px;
         text-shadow: 1px 1px 5px black; color: white;"
         >Press to Start</p>
         
@@ -246,23 +294,23 @@
             if (frog1Sick) {
                 frog1Hunger -= 1
             }
-            document.getElementById('FrogSlot1Condition').innerHTML = ' '
+            document.getElementById('FrogSlot1Condition').style.color = "transparent"
+            document.getElementById('FrogSlot1Condition2').style.color = "transparent"
+            document.getElementById('FrogSlot1Condition3').style.color = "transparent"
             if (frog1Age <= 12) {
-                document.getElementById('FrogSlot1Condition').innerHTML = 'Old Age'
+                document.getElementById('FrogSlot1Condition3').style.color = "red"
             }
             if (frog1Hunger <= 12) {
-                document.getElementById('FrogSlot1Condition').innerHTML =
-                document.getElementById('FrogSlot1Condition').innerHTML + '<br> Hungry'
+                document.getElementById('FrogSlot1Condition2').style.color = "red"
             }
             if (frog1Sick) {
-                document.getElementById('FrogSlot1Condition').innerHTML =
-                document.getElementById('FrogSlot1Condition').innerHTML + '<br> Sick'
+                document.getElementById('FrogSlot1Condition').style.color = "red"
             } else {
-                let sickrandom = Math.floor(Math.random() * 30)
+                let sickrandom = Math.floor(Math.random() * 40)
+                console.log(sickrandom)
                 if (sickrandom <= frog1Immune) {
                     frog1Sick = true
-                    document.getElementById('FrogSlot1Condition').innerHTML =
-                    document.getElementById('FrogSlot1Condition').innerHTML + '<br> Sick'
+                    document.getElementById('FrogSlot1Condition').style.color = "red"
                 }
             }
             if (frog1Age <= 0 || frog1Hunger <= 0) {
@@ -275,23 +323,22 @@
             if (frog2Sick) {
                 frog2Hunger -= 1
             }
-            document.getElementById('FrogSlot2Condition').innerHTML = ' '
+            document.getElementById('FrogSlot2Condition').style.color = "transparent"
+            document.getElementById('FrogSlot2Condition2').style.color = "transparent"
+            document.getElementById('FrogSlot2Condition3').style.color = "transparent"
             if (frog2Age <= 12) {
-                document.getElementById('FrogSlot2Condition').innerHTML = 'Old Age'
+                document.getElementById('FrogSlot2Condition3').style.color = "red"
             }
             if (frog2Hunger <= 12) {
-                document.getElementById('FrogSlot2Condition').innerHTML =
-                document.getElementById('FrogSlot2Condition').innerHTML + '<br> Hungry'
+                document.getElementById('FrogSlot2Condition2').style.color = "red"
             }
             if (frog2Sick) {
-                document.getElementById('FrogSlot2Condition').innerHTML =
-                document.getElementById('FrogSlot2Condition').innerHTML + '<br> Sick'
+                document.getElementById('FrogSlot2Condition').style.color = "red"
             } else {
-                let sickrandom = Math.floor(Math.random() * 30)
+                let sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog2Immune) {
                     frog2Sick = true
-                    document.getElementById('FrogSlot2Condition').innerHTML =
-                    document.getElementById('FrogSlot2Condition').innerHTML + '<br> Sick'
+                    document.getElementById('FrogSlot2Condition').style.color = "red"
                 }
             }
             if (frog2Age <= 0 || frog2Hunger <= 0) {
@@ -301,26 +348,22 @@
             }
             frog3Age -= 1
             frog3Hunger -= frog3Appitite
-            if (frog3Sick) {
-                frog3Hunger -= 1
-            }
-            document.getElementById('FrogSlot3Condition').innerHTML = ' '
+            document.getElementById('FrogSlot3Condition').style.color = "transparent"
+            document.getElementById('FrogSlot3Condition2').style.color = "transparent"
+            document.getElementById('FrogSlot3Condition3').style.color = "transparent"
             if (frog3Age <= 12) {
-                document.getElementById('FrogSlot3Condition').innerHTML = 'Old Age'
+                document.getElementById('FrogSlot3Condition3').style.color = "red"
             }
             if (frog3Hunger <= 12) {
-                document.getElementById('FrogSlot3Condition').innerHTML =
-                document.getElementById('FrogSlot3Condition').innerHTML + '<br> Hungry'
+                document.getElementById('FrogSlot3Condition2').style.color = "red"
             }
             if (frog3Sick) {
-                document.getElementById('FrogSlot3Condition').innerHTML =
-                document.getElementById('FrogSlot3Condition').innerHTML + '<br> Sick'
+                document.getElementById('FrogSlot3Condition').style.color = "red"
             } else {
-                let sickrandom = Math.floor(Math.random() * 30)
+                let sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog3Immune) {
                     frog3Sick = true
-                    document.getElementById('FrogSlot3Condition').innerHTML =
-                    document.getElementById('FrogSlot3Condition').innerHTML + '<br> Sick'
+                    document.getElementById('FrogSlot3Condition').style.color = "red"
                 }
             }
             if (frog3Age <= 0 || frog3Hunger <= 0) {
@@ -330,26 +373,22 @@
             }
             frog4Age -= 1
             frog4Hunger -= frog4Appitite
-            if (frog4Sick) {
-                frog4Hunger -= 1
-            }
-            document.getElementById('FrogSlot4Condition').innerHTML = ' '
+            document.getElementById('FrogSlot4Condition').style.color = "transparent"
+            document.getElementById('FrogSlot4Condition2').style.color = "transparent"
+            document.getElementById('FrogSlot4Condition3').style.color = "transparent"
             if (frog4Age <= 12) {
-                document.getElementById('FrogSlot4Condition').innerHTML = 'Old Age'
+                document.getElementById('FrogSlot4Condition3').style.color = "red"
             }
             if (frog4Hunger <= 12) {
-                document.getElementById('FrogSlot4Condition').innerHTML =
-                document.getElementById('FrogSlot4Condition').innerHTML + '<br> Hungry'
+                document.getElementById('FrogSlot4Condition2').style.color = "red"
             }
             if (frog4Sick) {
-                document.getElementById('FrogSlot4Condition').innerHTML =
-                document.getElementById('FrogSlot4Condition').innerHTML + '<br> Sick'
+                document.getElementById('FrogSlot4Condition').style.color = "red"
             } else {
-                let sickrandom = Math.floor(Math.random() * 30)
+                let sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog4Immune) {
                     frog4Sick = true
-                    document.getElementById('FrogSlot4Condition').innerHTML =
-                    document.getElementById('FrogSlot4Condition').innerHTML + '<br> Sick'
+                    document.getElementById('FrogSlot4Condition').style.color = "red"
                 }
             }
             if (frog4Age <= 0 || frog4Hunger <= 0) {
@@ -359,26 +398,22 @@
             }
             frog5Age -= 1
             frog5Hunger -= frog5Appitite
-            if (frog5Sick) {
-                frog5Hunger -= 1
-            }
-            document.getElementById('FrogSlot5Condition').innerHTML = ' '
+            document.getElementById('FrogSlot5Condition').style.color = "transparent"
+            document.getElementById('FrogSlot5Condition2').style.color = "transparent"
+            document.getElementById('FrogSlot5Condition3').style.color = "transparent"
             if (frog5Age <= 12) {
-                document.getElementById('FrogSlot5Condition').innerHTML = 'Old Age'
+                document.getElementById('FrogSlot5Condition3').style.color = "red"
             }
             if (frog5Hunger <= 12) {
-                document.getElementById('FrogSlot5Condition').innerHTML =
-                document.getElementById('FrogSlot5Condition').innerHTML + '<br> Hungry'
+                document.getElementById('FrogSlot5Condition2').style.color = "red"
             }
             if (frog5Sick) {
-                document.getElementById('FrogSlot5Condition').innerHTML =
-                document.getElementById('FrogSlot5Condition').innerHTML + '<br> Sick'
+                document.getElementById('FrogSlot5Condition').style.color = "red"
             } else {
-                let sickrandom = Math.floor(Math.random() * 30)
+                let sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog5Immune) {
                     frog5Sick = true
-                    document.getElementById('FrogSlot5Condition').innerHTML =
-                    document.getElementById('FrogSlot5Condition').innerHTML + '<br> Sick'
+                    document.getElementById('FrogSlot5Condition').style.color = "red"
                 }
             }
             if (frog5Age <= 0 || frog5Hunger <= 0) {
@@ -388,27 +423,22 @@
             }
             frog6Age -= 1
             frog6Hunger -= frog6Appitite
-            if (frog6Sick) {
-                frog6Hunger -= 1
-            }
-            document.getElementById('FrogSlot6Condition').innerHTML = ' '
+            document.getElementById('FrogSlot6Condition').style.color = "transparent"
+            document.getElementById('FrogSlot6Condition2').style.color = "transparent"
+            document.getElementById('FrogSlot6Condition3').style.color = "transparent"
             if (frog6Age <= 12) {
-                document.getElementById('FrogSlot6Condition').innerHTML = 'Old Age'
+                document.getElementById('FrogSlot6Condition3').style.color = "red"
             }
             if (frog6Hunger <= 12) {
-                document.getElementById('FrogSlot6Condition').innerHTML =
-                document.getElementById('FrogSlot6Condition').innerHTML + '<br> Hungry'
+                document.getElementById('FrogSlot6Condition2').style.color = "red"
             }
             if (frog6Sick) {
-                document.getElementById('FrogSlot6Condition').innerHTML =
-                document.getElementById('FrogSlot6Condition').innerHTML + '<br> Sick'
+                document.getElementById('FrogSlot6Condition').style.color = "red"
             } else {
-                let sickrandom = Math.floor(Math.random() * 30)
-                console.log(sickrandom)
+                let sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog6Immune) {
                     frog6Sick = true
-                    document.getElementById('FrogSlot6Condition').innerHTML =
-                    document.getElementById('FrogSlot6Condition').innerHTML + '<br> Sick'
+                    document.getElementById('FrogSlot6Condition').style.color = "red"
                 }
             }
             if (frog6Age <= 0 || frog6Hunger <= 0) {
