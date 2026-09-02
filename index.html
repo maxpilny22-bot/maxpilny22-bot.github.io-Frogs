@@ -225,7 +225,7 @@
         >Old</p>
 
         <p id="FrogSelectionText"
-        style="font-size: 3.5rem; margin-left: 35%; margin-bottom: 220px;
+        style="font-size: 3.5rem; margin-left: 35%; margin-bottom: 200px;
         text-shadow: 1px 1px 5px transparent; color: white;"
         >Press to Start</p>
         
@@ -289,28 +289,34 @@
             updatefrogscore()
 
             function ageFunction() {
+            let sickrandom = Math.floor(Math.random() * 40)
+            console.log(frog1Hunger)
             frog1Age -= 1
             frog1Hunger -= frog1Appitite
             if (frog1Sick) {
                 frog1Hunger -= 1
             }
+            console.log(frog1Hunger)
             document.getElementById('FrogSlot1Condition').style.color = "transparent"
             document.getElementById('FrogSlot1Condition2').style.color = "transparent"
             document.getElementById('FrogSlot1Condition3').style.color = "transparent"
-            if (frog1Age <= 12) {
+            if (frog1Age <= 5) {
                 document.getElementById('FrogSlot1Condition3').style.color = "red"
+            } else if (frog1Age <= 12) {
+                document.getElementById('FrogSlot1Condition3').style.color = "orange"
             }
-            if (frog1Hunger <= 12) {
+            if (frog1Hunger <= 5) {
                 document.getElementById('FrogSlot1Condition2').style.color = "red"
+            } else if (frog1Hunger <= 12) {
+                document.getElementById('FrogSlot1Condition2').style.color = "orange"
             }
             if (frog1Sick) {
-                document.getElementById('FrogSlot1Condition').style.color = "red"
+                document.getElementById('FrogSlot1Condition').style.color = "orange"
             } else {
-                let sickrandom = Math.floor(Math.random() * 40)
-                console.log(sickrandom)
+                sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog1Immune) {
                     frog1Sick = true
-                    document.getElementById('FrogSlot1Condition').style.color = "red"
+                    document.getElementById('FrogSlot1Condition').style.color = "orange"
                 }
             }
             if (frog1Age <= 0 || frog1Hunger <= 0) {
@@ -326,19 +332,23 @@
             document.getElementById('FrogSlot2Condition').style.color = "transparent"
             document.getElementById('FrogSlot2Condition2').style.color = "transparent"
             document.getElementById('FrogSlot2Condition3').style.color = "transparent"
-            if (frog2Age <= 12) {
+            if (frog2Age <= 5) {
                 document.getElementById('FrogSlot2Condition3').style.color = "red"
+            } else if (frog2Age <= 12) {
+                document.getElementById('FrogSlot2Condition3').style.color = "orange"
             }
-            if (frog2Hunger <= 12) {
+            if (frog2Hunger <= 5) {
                 document.getElementById('FrogSlot2Condition2').style.color = "red"
+            } else if (frog2Hunger <= 12) {
+                document.getElementById('FrogSlot2Condition2').style.color = "orange"
             }
             if (frog2Sick) {
-                document.getElementById('FrogSlot2Condition').style.color = "red"
+                document.getElementById('FrogSlot2Condition').style.color = "orange"
             } else {
-                let sickrandom = Math.floor(Math.random() * 40)
+                sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog2Immune) {
                     frog2Sick = true
-                    document.getElementById('FrogSlot2Condition').style.color = "red"
+                    document.getElementById('FrogSlot2Condition').style.color = "orange"
                 }
             }
             if (frog2Age <= 0 || frog2Hunger <= 0) {
@@ -351,19 +361,23 @@
             document.getElementById('FrogSlot3Condition').style.color = "transparent"
             document.getElementById('FrogSlot3Condition2').style.color = "transparent"
             document.getElementById('FrogSlot3Condition3').style.color = "transparent"
-            if (frog3Age <= 12) {
+            if (frog3Age <= 5) {
                 document.getElementById('FrogSlot3Condition3').style.color = "red"
+            } else if (frog3Age <= 12) {
+                document.getElementById('FrogSlot3Condition3').style.color = "orange"
             }
-            if (frog3Hunger <= 12) {
+            if (frog3Hunger <= 5) {
                 document.getElementById('FrogSlot3Condition2').style.color = "red"
+            } else if (frog3Hunger <= 12) {
+                document.getElementById('FrogSlot3Condition2').style.color = "orange"
             }
             if (frog3Sick) {
-                document.getElementById('FrogSlot3Condition').style.color = "red"
+                document.getElementById('FrogSlot3Condition').style.color = "orange"
             } else {
-                let sickrandom = Math.floor(Math.random() * 40)
+                sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog3Immune) {
                     frog3Sick = true
-                    document.getElementById('FrogSlot3Condition').style.color = "red"
+                    document.getElementById('FrogSlot3Condition').style.color = "orange"
                 }
             }
             if (frog3Age <= 0 || frog3Hunger <= 0) {
@@ -376,19 +390,23 @@
             document.getElementById('FrogSlot4Condition').style.color = "transparent"
             document.getElementById('FrogSlot4Condition2').style.color = "transparent"
             document.getElementById('FrogSlot4Condition3').style.color = "transparent"
-            if (frog4Age <= 12) {
+            if (frog4Age <= 5) {
                 document.getElementById('FrogSlot4Condition3').style.color = "red"
+            } else if (frog4Age <= 12) {
+                document.getElementById('FrogSlot4Condition3').style.color = "orange"
             }
-            if (frog4Hunger <= 12) {
+            if (frog4Hunger <= 5) {
                 document.getElementById('FrogSlot4Condition2').style.color = "red"
+            } else if (frog4Hunger <= 12) {
+                document.getElementById('FrogSlot4Condition2').style.color = "orange"
             }
             if (frog4Sick) {
-                document.getElementById('FrogSlot4Condition').style.color = "red"
+                document.getElementById('FrogSlot4Condition').style.color = "orange"
             } else {
-                let sickrandom = Math.floor(Math.random() * 40)
+                sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog4Immune) {
                     frog4Sick = true
-                    document.getElementById('FrogSlot4Condition').style.color = "red"
+                    document.getElementById('FrogSlot4Condition').style.color = "orange"
                 }
             }
             if (frog4Age <= 0 || frog4Hunger <= 0) {
@@ -401,19 +419,23 @@
             document.getElementById('FrogSlot5Condition').style.color = "transparent"
             document.getElementById('FrogSlot5Condition2').style.color = "transparent"
             document.getElementById('FrogSlot5Condition3').style.color = "transparent"
-            if (frog5Age <= 12) {
+            if (frog5Age <= 5) {
                 document.getElementById('FrogSlot5Condition3').style.color = "red"
+            } else if (frog5Age <= 12) {
+                document.getElementById('FrogSlot5Condition3').style.color = "orange"
             }
-            if (frog5Hunger <= 12) {
+            if (frog5Hunger <= 5) {
                 document.getElementById('FrogSlot5Condition2').style.color = "red"
+            } else if (frog5Hunger <= 12) {
+                document.getElementById('FrogSlot5Condition2').style.color = "orange"
             }
             if (frog5Sick) {
-                document.getElementById('FrogSlot5Condition').style.color = "red"
+                document.getElementById('FrogSlot5Condition').style.color = "orange"
             } else {
-                let sickrandom = Math.floor(Math.random() * 40)
+                sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog5Immune) {
                     frog5Sick = true
-                    document.getElementById('FrogSlot5Condition').style.color = "red"
+                    document.getElementById('FrogSlot5Condition').style.color = "orange"
                 }
             }
             if (frog5Age <= 0 || frog5Hunger <= 0) {
@@ -426,19 +448,23 @@
             document.getElementById('FrogSlot6Condition').style.color = "transparent"
             document.getElementById('FrogSlot6Condition2').style.color = "transparent"
             document.getElementById('FrogSlot6Condition3').style.color = "transparent"
-            if (frog6Age <= 12) {
+            if (frog6Age <= 5) {
                 document.getElementById('FrogSlot6Condition3').style.color = "red"
+            } else if (frog6Age <= 12) {
+                document.getElementById('FrogSlot6Condition3').style.color = "orange"
             }
-            if (frog6Hunger <= 12) {
+            if (frog6Hunger <= 5) {
                 document.getElementById('FrogSlot6Condition2').style.color = "red"
+            } else if (frog6Hunger <= 12) {
+                document.getElementById('FrogSlot6Condition2').style.color = "orange"
             }
             if (frog6Sick) {
-                document.getElementById('FrogSlot6Condition').style.color = "red"
+                document.getElementById('FrogSlot6Condition').style.color = "orange"
             } else {
-                let sickrandom = Math.floor(Math.random() * 40)
+                sickrandom = Math.floor(Math.random() * 40)
                 if (sickrandom <= frog6Immune) {
                     frog6Sick = true
-                    document.getElementById('FrogSlot6Condition').style.color = "red"
+                    document.getElementById('FrogSlot6Condition').style.color = "orange"
                 }
             }
             if (frog6Age <= 0 || frog6Hunger <= 0) {
@@ -448,72 +474,132 @@
             }
             }
             function newitemFunction() {
-                let randomItemNum = Math.floor(Math.random() * 3)
-                if (randomItemNum == 1) {
+                let randomItemNum = Math.floor(Math.random() * 5)
+                if (randomItemNum == 0) {
                     document.getElementById('FrogSelection').src = "Images/Cricket.jpg"
                     document.getElementById('FrogSelection').title = "Cricket"
                     document.getElementById('FrogSelectionText').innerHTML =
                     "Yummy, click on a frog for + 6 food"
-                } else if (randomItemNum == 2) {
+                } else if (randomItemNum == 1) {
                     document.getElementById('FrogSelection').src = "Images/Worm.jpg"
                     document.getElementById('FrogSelection').title = "Worm"
                     document.getElementById('FrogSelectionText').innerHTML =
                     "Yummy, click on a frog for + 8 food"
-                } else if (randomItemNum == 3) {
+                } else if (randomItemNum == 2) {
                     document.getElementById('FrogSelection').src = "Images/Mosquito.jpg"
                     document.getElementById('FrogSelection').title = "Mosquito"
                     document.getElementById('FrogSelectionText').innerHTML =
                     "Yummy, click on a frog for + 8 food, but can cause sickness"
+                } else if (randomItemNum == 3) {
+                    document.getElementById('FrogSelection').src = "Images/DragonFly.jpg"
+                    document.getElementById('FrogSelection').title = "Dragonfly"
+                    document.getElementById('FrogSelectionText').innerHTML =
+                    "Yummy, click on a frog for + 10 food"
+                } else if (randomItemNum == 4) {
+                    document.getElementById('FrogSelection').src = "Images/Medicine.jpg"
+                    document.getElementById('FrogSelection').title = "Medicine"
+                    document.getElementById('FrogSelectionText').innerHTML =
+                    "Click on a frog to get rid of sickness"
                 }
             }
             function useitemFunction(frognum) {
+                let eatsound = new Audio('Images/Bite.mp3')
+                eatsound.play()
                 if (frognum == 1) {
-                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                    if (document.getElementById('FrogSelection').title == "Cricket") {
                         frog1Hunger += 6
-                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                    } else if (document.getElementById('FrogSelection').title == "Worm") {
                         frog1Hunger += 8
-                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                    } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog1Hunger += 8
+                        sickrandom = Math.floor(Math.random() * 20)
+                        if (sickrandom <= frog1Immune) {
+                            frog1Sick = true
+                        }
+                    } else if (document.getElementById('FrogSelection').title == "Dragonfly") {
+                        frog1Hunger += 10
+                    } else if (document.getElementById('FrogSelection').title == "Medicine") {
+                        frog1Sick = false
                     }
                 } else if (frognum == 2) {
-                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                    if (document.getElementById('FrogSelection').title == "Cricket") {
                         frog2Hunger += 6
-                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                    } else if (document.getElementById('FrogSelection').title == "Worm") {
                         frog2Hunger += 8
-                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                    } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog2Hunger += 8
+                        sickrandom = Math.floor(Math.random() * 20)
+                        if (sickrandom <= frog2Immune) {
+                            frog2Sick = true
+                        }
+                    } else if (document.getElementById('FrogSelection').title == "Dragonfly") {
+                        frog2Hunger += 10
+                    } else if (document.getElementById('FrogSelection').title == "Medicine") {
+                        frog2Sick = false
                     }
                 } else if (frognum == 3) {
-                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                    if (document.getElementById('FrogSelection').title == "Cricket") {
                         frog3Hunger += 6
-                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                    } else if (document.getElementById('FrogSelection').title == "Worm") {
                         frog3Hunger += 8
-                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                    } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog3Hunger += 8
-                    } 
+                        sickrandom = Math.floor(Math.random() * 20)
+                        if (sickrandom <= frog3Immune) {
+                            frog3Sick = true
+                        }
+                    } else if (document.getElementById('FrogSelection').title == "Dragonfly") {
+                        frog3Hunger += 10
+                    } else if (document.getElementById('FrogSelection').title == "Medicine") {
+                        frog3Sick = false
+                    }
                 } else if (frognum == 4) {
-                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                    if (document.getElementById('FrogSelection').title == "Cricket") {
                         frog4Hunger += 4
-                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                    } else if (document.getElementById('FrogSelection').title == "Worm") {
                         frog4Hunger += 8
-                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                    } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog4Hunger += 8
+                        sickrandom = Math.floor(Math.random() * 20)
+                        if (sickrandom <= frog4Immune) {
+                            frog4Sick = true
+                        }
+                    } else if (document.getElementById('FrogSelection').title == "Dragonfly") {
+                        frog4Hunger += 10
+                    } else if (document.getElementById('FrogSelection').title == "Medicine") {
+                        frog4Sick = false
                     }
                 } else if (frognum == 5) {
                     if (document.getElementById('FrogSelection').title = "Cricket") {
                         frog5Hunger += 6
-                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                    } else if (document.getElementById('FrogSelection').title == "Worm") {
                         frog5Hunger += 8
-                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                    } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog5Hunger += 8
+                        sickrandom = Math.floor(Math.random() * 20)
+                        if (sickrandom <= frog5Immune) {
+                            frog5Sick = true
+                        }
+                    } else if (document.getElementById('FrogSelection').title == "Dragonfly") {
+                        frog5Hunger += 10
+                    } else if (document.getElementById('FrogSelection').title == "Medicine") {
+                        frog5Sick = false
                     }
                 } else if (frognum == 6) {
-                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                    if (document.getElementById('FrogSelection').title == "Cricket") {
                         frog6Hunger += 6
-                    } else if (document.getElementById('FrogSelection').title = "Worm") {
+                    } else if (document.getElementById('FrogSelection').title == "Worm") {
                         frog6Hunger += 8
-                    } else if (document.getElementById('FrogSelection').title = "Mosquito") {
+                    } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog6Hunger += 8
+                        sickrandom = Math.floor(Math.random() * 20)
+                        if (sickrandom <= frog6Immune) {
+                            frog6Sick = true
+                        }
+                    } else if (document.getElementById('FrogSelection').title == "Dragonfly") {
+                        frog6Hunger += 10
+                    } else if (document.getElementById('FrogSelection').title == "Medicine") {
+                        frog6Sick = false
                     }
                 }
             }
