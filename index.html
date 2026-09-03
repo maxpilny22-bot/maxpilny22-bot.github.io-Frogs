@@ -21,8 +21,11 @@
         style="position: absolute; left: 35%; bottom: 30px;
         outline-style: solid; outline-width: 8px; outline-color: rgb(19, 19, 19);"
         onclick="
-        startedgame = true
-        newitemFunction()
+        if (startedgame == false) {
+            startedgame = true
+            newitemFunction()
+            document.getElementById('SkipButton').style.display = 'block'
+        }
         ">
 
         <img src="Images/BasicFrog.jpg" alt="Slot" id="FrogSlot1" title="BasicFrog" 
@@ -225,9 +228,18 @@
         >Old</p>
 
         <p id="FrogSelectionText"
-        style="font-size: 3.5rem; margin-left: 35%; margin-bottom: 200px;
+        style="font-size: 3.5rem; margin-left: 35%; margin-bottom: 170px;
         text-shadow: 1px 1px 5px transparent; color: white;"
         >Press to Start</p>
+
+        <button id="SkipButton"
+        style="font-size: 2.5rem; margin-bottom: 170px; margin-left: 15%;
+        outline-style: solid; outline-width: 5px; outline-color: rgb(19, 19, 19);
+        display: none;" onclick="
+        newitemFunction()
+        ageFunction()">
+            Skip Item 
+        </button>
         
         <script>
             let startedgame = false
@@ -290,13 +302,11 @@
 
             function ageFunction() {
             let sickrandom = Math.floor(Math.random() * 40)
-            console.log(frog1Hunger)
             frog1Age -= 1
             frog1Hunger -= frog1Appitite
             if (frog1Sick) {
                 frog1Hunger -= 1
             }
-            console.log(frog1Hunger)
             document.getElementById('FrogSlot1Condition').style.color = "transparent"
             document.getElementById('FrogSlot1Condition2').style.color = "transparent"
             document.getElementById('FrogSlot1Condition3').style.color = "transparent"
@@ -323,6 +333,9 @@
                 document.getElementById('FrogSlot1').style.pointerEvents = "none"
                 document.getElementById('FrogSlot1').src = "Images/Dead.jpg"
                 document.getElementById('FrogSlot1Name').style.color = "red"
+                document.getElementById('FrogSlot1Condition').style.color = "transparent"
+                document.getElementById('FrogSlot1Condition2').style.color = "transparent"
+                document.getElementById('FrogSlot1Condition3').style.color = "transparent"
             }
             frog2Age -= 1
             frog2Hunger -= frog2Appitite
@@ -355,6 +368,9 @@
                 document.getElementById('FrogSlot2').style.pointerEvents = "none"
                 document.getElementById('FrogSlot2').src = "Images/Dead.jpg"
                 document.getElementById('FrogSlot2Name').style.color = "red"
+                document.getElementById('FrogSlot2Condition').style.color = "transparent"
+                document.getElementById('FrogSlot2Condition2').style.color = "transparent"
+                document.getElementById('FrogSlot2Condition3').style.color = "transparent"
             }
             frog3Age -= 1
             frog3Hunger -= frog3Appitite
@@ -384,6 +400,9 @@
                 document.getElementById('FrogSlot3').style.pointerEvents = "none"
                 document.getElementById('FrogSlot3').src = "Images/Dead.jpg"
                 document.getElementById('FrogSlot3Name').style.color = "red"
+                document.getElementById('FrogSlot3Condition').style.color = "transparent"
+                document.getElementById('FrogSlot3Condition2').style.color = "transparent"
+                document.getElementById('FrogSlot3Condition3').style.color = "transparent"
             }
             frog4Age -= 1
             frog4Hunger -= frog4Appitite
@@ -413,6 +432,9 @@
                 document.getElementById('FrogSlot4').style.pointerEvents = "none"
                 document.getElementById('FrogSlot4').src = "Images/Dead.jpg"
                 document.getElementById('FrogSlot4Name').style.color = "red"
+                document.getElementById('FrogSlot4Condition').style.color = "transparent"
+                document.getElementById('FrogSlot4Condition2').style.color = "transparent"
+                document.getElementById('FrogSlot4Condition3').style.color = "transparent"
             }
             frog5Age -= 1
             frog5Hunger -= frog5Appitite
@@ -442,6 +464,9 @@
                 document.getElementById('FrogSlot5').style.pointerEvents = "none"
                 document.getElementById('FrogSlot5').src = "Images/Dead.jpg"
                 document.getElementById('FrogSlot5Name').style.color = "red"
+                document.getElementById('FrogSlot5Condition').style.color = "transparent"
+                document.getElementById('FrogSlot5Condition2').style.color = "transparent"
+                document.getElementById('FrogSlot5Condition3').style.color = "transparent"
             }
             frog6Age -= 1
             frog6Hunger -= frog6Appitite
@@ -471,6 +496,9 @@
                 document.getElementById('FrogSlot6').style.pointerEvents = "none"
                 document.getElementById('FrogSlot6').src = "Images/Dead.jpg"
                 document.getElementById('FrogSlot6Name').style.color = "red"
+                document.getElementById('FrogSlot6Condition').style.color = "transparent"
+                document.getElementById('FrogSlot6Condition2').style.color = "transparent"
+                document.getElementById('FrogSlot6Condition3').style.color = "transparent"
             }
             }
             function newitemFunction() {
@@ -570,7 +598,7 @@
                         frog4Sick = false
                     }
                 } else if (frognum == 5) {
-                    if (document.getElementById('FrogSelection').title = "Cricket") {
+                    if (document.getElementById('FrogSelection').title == "Cricket") {
                         frog5Hunger += 6
                     } else if (document.getElementById('FrogSelection').title == "Worm") {
                         frog5Hunger += 8
