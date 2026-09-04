@@ -36,6 +36,7 @@
         if (startedgame) {
             useitemFunction(1)
             ageFunction()
+            updatefrogscore()
             newitemFunction()
         } else {
             console.log('NOT STARTED YET')
@@ -57,6 +58,7 @@
         if (startedgame) {
             useitemFunction(2)
             ageFunction()
+            updatefrogscore()
             newitemFunction()
         } else {
             console.log('NOT STARTED YET')
@@ -78,6 +80,7 @@
         if (startedgame) {
             useitemFunction(3)
             ageFunction()
+            updatefrogscore()
             newitemFunction()
         } else {
             console.log('NOT STARTED YET')
@@ -99,6 +102,7 @@
         if (startedgame) {
             useitemFunction(4)
             ageFunction()
+            updatefrogscore()
             newitemFunction()
         } else {
             console.log('NOT STARTED YET')
@@ -120,6 +124,7 @@
         if (startedgame) {
             useitemFunction(5)
             ageFunction()
+            updatefrogscore()
             newitemFunction()
         } else {
             console.log('NOT STARTED YET')
@@ -141,6 +146,7 @@
         if (startedgame) {
             useitemFunction(6)
             ageFunction()
+            updatefrogscore()
             newitemFunction()
         } else {
             console.log('NOT STARTED YET')
@@ -228,7 +234,7 @@
         >Old</p>
 
         <p id="FrogSelectionText"
-        style="font-size: 3.5rem; margin-bottom: 130px;
+        style="font-size: 3.5rem; margin-bottom: 110px;
         text-shadow: 1px 1px 5px transparent; color: white; text-align: center;"
         >Press to Start</p>
 
@@ -297,6 +303,18 @@
             function updatefrogscore() {
                 let totalScore = frog1Score + frog2Score + frog3Score + frog4Score + frog5Score + frog6Score    
                 document.getElementById('score').innerHTML = "Score: " + totalScore
+                document.getElementById('FrogSlot1Score').innerHTML =
+                '+' + frog1Score + ' score'
+                document.getElementById('FrogSlot2Score').innerHTML =
+                '+' + frog2Score + ' score'
+                document.getElementById('FrogSlot3Score').innerHTML =
+                '+' + frog3Score + ' score'
+                document.getElementById('FrogSlot4Score').innerHTML =
+                '+' + frog4Score + ' score'
+                document.getElementById('FrogSlot5Score').innerHTML =
+                '+' + frog5Score + ' score'
+                document.getElementById('FrogSlot6Score').innerHTML =
+                '+' + frog6Score + ' score'
             }
             updatefrogscore()
 
@@ -502,7 +520,7 @@
             }
             }
             function newitemFunction() {
-                let randomItemNum = Math.floor(Math.random() * 5)
+                let randomItemNum = Math.floor(Math.random() * 6)
                 if (randomItemNum == 0) {
                     document.getElementById('FrogSelection').src = "Images/Cricket.jpg"
                     document.getElementById('FrogSelection').title = "Cricket"
@@ -528,6 +546,11 @@
                     document.getElementById('FrogSelection').title = "Medicine"
                     document.getElementById('FrogSelectionText').innerHTML =
                     "Click on a frog to get rid of sickness"
+                } else if (randomItemNum == 5) {
+                    document.getElementById('FrogSelection').src = "Images/IceCream.jpg"
+                    document.getElementById('FrogSelection').title = "Ice Cream"
+                    document.getElementById('FrogSelectionText').innerHTML =
+                    "Yummy, click on a frog for +4 food and +2 score"
                 }
             }
             function useitemFunction(frognum) {
@@ -540,7 +563,7 @@
                         frog1Hunger += 8
                     } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog1Hunger += 8
-                        sickrandom = Math.floor(Math.random() * 20)
+                        sickrandom = Math.floor(Math.random() * 15)
                         if (sickrandom <= frog1Immune) {
                             frog1Sick = true
                         }
@@ -548,6 +571,9 @@
                         frog1Hunger += 10
                     } else if (document.getElementById('FrogSelection').title == "Medicine") {
                         frog1Sick = false
+                    } else if (document.getElementById('FrogSelection').title == "Ice Cream") {
+                        frog1Hunger += 4
+                        frog1Score += 2
                     }
                 } else if (frognum == 2) {
                     if (document.getElementById('FrogSelection').title == "Cricket") {
@@ -556,7 +582,7 @@
                         frog2Hunger += 8
                     } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog2Hunger += 8
-                        sickrandom = Math.floor(Math.random() * 20)
+                        sickrandom = Math.floor(Math.random() * 15)
                         if (sickrandom <= frog2Immune) {
                             frog2Sick = true
                         }
@@ -564,6 +590,9 @@
                         frog2Hunger += 10
                     } else if (document.getElementById('FrogSelection').title == "Medicine") {
                         frog2Sick = false
+                    } else if (document.getElementById('FrogSelection').title == "Ice Cream") {
+                        frog2Hunger += 4
+                        frog2Score += 2
                     }
                 } else if (frognum == 3) {
                     if (document.getElementById('FrogSelection').title == "Cricket") {
@@ -572,7 +601,7 @@
                         frog3Hunger += 8
                     } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog3Hunger += 8
-                        sickrandom = Math.floor(Math.random() * 20)
+                        sickrandom = Math.floor(Math.random() * 15)
                         if (sickrandom <= frog3Immune) {
                             frog3Sick = true
                         }
@@ -580,6 +609,9 @@
                         frog3Hunger += 10
                     } else if (document.getElementById('FrogSelection').title == "Medicine") {
                         frog3Sick = false
+                    } else if (document.getElementById('FrogSelection').title == "Ice Cream") {
+                        frog3Hunger += 4
+                        frog3Score += 2
                     }
                 } else if (frognum == 4) {
                     if (document.getElementById('FrogSelection').title == "Cricket") {
@@ -588,7 +620,7 @@
                         frog4Hunger += 8
                     } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog4Hunger += 8
-                        sickrandom = Math.floor(Math.random() * 20)
+                        sickrandom = Math.floor(Math.random() * 15)
                         if (sickrandom <= frog4Immune) {
                             frog4Sick = true
                         }
@@ -596,6 +628,9 @@
                         frog4Hunger += 10
                     } else if (document.getElementById('FrogSelection').title == "Medicine") {
                         frog4Sick = false
+                    } else if (document.getElementById('FrogSelection').title == "Ice Cream") {
+                        frog4Hunger += 4
+                        frog4Score += 2
                     }
                 } else if (frognum == 5) {
                     if (document.getElementById('FrogSelection').title == "Cricket") {
@@ -604,7 +639,7 @@
                         frog5Hunger += 8
                     } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog5Hunger += 8
-                        sickrandom = Math.floor(Math.random() * 20)
+                        sickrandom = Math.floor(Math.random() * 15)
                         if (sickrandom <= frog5Immune) {
                             frog5Sick = true
                         }
@@ -612,6 +647,9 @@
                         frog5Hunger += 10
                     } else if (document.getElementById('FrogSelection').title == "Medicine") {
                         frog5Sick = false
+                    } else if (document.getElementById('FrogSelection').title == "Ice Cream") {
+                        frog5Hunger += 4
+                        frog5Score += 2
                     }
                 } else if (frognum == 6) {
                     if (document.getElementById('FrogSelection').title == "Cricket") {
@@ -620,7 +658,7 @@
                         frog6Hunger += 8
                     } else if (document.getElementById('FrogSelection').title == "Mosquito") {
                         frog6Hunger += 8
-                        sickrandom = Math.floor(Math.random() * 20)
+                        sickrandom = Math.floor(Math.random() * 15)
                         if (sickrandom <= frog6Immune) {
                             frog6Sick = true
                         }
@@ -628,6 +666,9 @@
                         frog6Hunger += 10
                     } else if (document.getElementById('FrogSelection').title == "Medicine") {
                         frog6Sick = false
+                    } else if (document.getElementById('FrogSelection').title == "Ice Cream") {
+                        frog6Hunger += 4
+                        frog6Score += 2
                     }
                 }
             }
